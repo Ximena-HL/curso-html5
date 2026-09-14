@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!-- 3.5Ejercicios.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>3.5Ejercicios</title>
+   </head>
+
+   <body>
+      <h1>Ejercicio 3.5: Elementos de HTML5</h1>
+
+      <ol type="a">
+         <li>
+            <p><strong>Escala con elemento meter (calificaci&oacute;n promedio 7 de 10):</strong></p>
+            1 <meter min="1" max="10" value="7"></meter> 10
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento details con summary y p&aacute;rrafo explicativo:</strong></p>
+            <details>
+               <summary>Resultados de la encuesta</summary>
+               <p>Esta encuesta evalu&oacute; la satisfacci&oacute;n de los estudiantes respecto a la calidad y variedad de los alimentos ofrecidos en la cafeter&iacute;a.</p>
+               1 <meter min="1" max="10" value="7"></meter> 10
+            </details>
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento input text con autofocus y label:</strong></p>
+            <label for="nombre">Primer nombre:</label>
+            <input type="text" id="nombre" autofocus />
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento input sin label y con placeholder:</strong></p>
+            <input type="text" placeholder="Primer nombre" />
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento datalist para autocompletar cinco estados:</strong></p>
+            <label for="campoEstado">Seleccione un estado:</label>
+            <input type="text" id="campoEstado" list="estados" placeholder="Escriba un estado" />
+            <datalist id="estados">
+               <option value="Veracruz">
+               <option value="Puebla">
+               <option value="Oaxaca">
+               <option value="Jalisco">
+               <option value="Nuevo Le&oacute;n">
+            </datalist>
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento input range del 1 al 100:</strong></p>
+            1 <input type="range" min="1" max="100" value="50" /> 100
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Etiqueta de apertura de formulario sin autocomplete:</strong></p>
+            <code>&lt;form autocomplete="off"&gt;</code>
+         </li>
+         <br>
+
+         <li>
+            <p><strong>Elemento mark para resaltar el segundo enunciado:</strong></p>
+            <p>Se pidi&oacute; a los estudiantes que calificaran los alimentos en la cafeter&iacute;a en una escala del 1 al 10. <mark>El resultado promedio fue 7.</mark></p>
+         </li>
+      </ol>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

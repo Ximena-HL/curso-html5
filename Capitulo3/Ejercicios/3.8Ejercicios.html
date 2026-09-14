@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- 3.8Ejercicios.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>3.8Ejercicios</title>
+   </head>
+
+   <body>
+      <h1>Ejercicio 3.8: Selecci&oacute;n de d&iacute;a de la semana</h1>
+      <p>Escriba o seleccione un d&iacute;a de la semana de la lista de sugerencias:</p>
+
+      <form method="get" autocomplete="on">
+         <p>
+            <label for="diaSemana">D&iacute;a de la semana:</label>
+            <input type="text" id="diaSemana" name="dia" 
+               placeholder="Seleccione o escriba un d&iacute;a" 
+               list="dias" autofocus />
+
+            <datalist id="dias">
+               <option value="Lunes">
+               <option value="Martes">
+               <option value="Mi&eacute;rcoles">
+               <option value="Jueves">
+               <option value="Viernes">
+               <option value="S&aacute;bado">
+               <option value="Domingo">
+            </datalist>
+         </p>
+
+         <p>
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Borrar" />
+         </p>
+      </form>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

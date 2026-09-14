@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<!-- 3.11Ejercicios.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>3.11Ejercicios</title>
+   </head>
+
+   <body>
+      <header>
+         <h1>Cap&iacute;tulo 3: Introducci&oacute;n a HTML5: parte 2</h1>
+         <h2>3.2 Nuevos tipos de elementos input de formularios de HTML5</h2>
+      </header>
+
+      <section>
+         <article>
+            <header>
+               <h3>3.2.1 Tipo input <code>color</code></h3>
+            </header>
+
+            <p>
+               El tipo input <strong><code>color</code></strong> permite al usuario especificar un color. 
+               La mayor&iacute;a de los navegadores que lo soportan despliegan una paleta o selector visual 
+               de colores (<em>color picker</em>) cuando el usuario hace clic en el control. En navegadores que 
+               no implementan una interfaz interactiva de selecci&oacute;n, el elemento se comporta como un 
+               campo de texto est&aacute;ndar donde el usuario puede escribir un c&oacute;digo de color en formato 
+               hexadecimal (por ejemplo, <code>#ADD8E6</code>).
+            </p>
+
+            <figure>
+               <img src="../textoEImagenesEjercicio/color.png" alt="Selector de color en el navegador" style="max-width: 100%; height: auto;" />
+               <figcaption>Figura 3.2: Renderizado del control input de tipo color en un navegador compatible.</figcaption>
+            </figure>
+
+            <p>
+               Al enviar el formulario, el navegador valida de manera nativa que el valor proporcionado sea 
+               un c&oacute;digo hexadecimal v&aacute;lido de siete caracteres compuesto por el s&iacute;mbolo 
+               numeral (<code>#</code>) seguido de seis d&iacute;gitos hexadecimales en min&uacute;scula.
+            </p>
+
+            <figure>
+               <img src="../textoEImagenesEjercicio/paleta.png" alt="Paleta emergente de seleccion de color" style="max-width: 100%; height: auto;" />
+               <figcaption>Figura 3.3: Cuadro de di&aacute;logo de selecci&oacute;n de color abierto por el usuario.</figcaption>
+            </figure>
+
+            <details>
+               <summary><strong>Figura 3.5: Nuevos tipos de elementos input de formularios de HTML5</strong></summary>
+               <br>
+               <table border="1">
+                  <thead>
+                     <tr>
+                        <th>Tipo de input</th>
+                        <th>Descripci&oacute;n</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td><code>color</code></td>
+                        <td>Permite seleccionar un color mediante una paleta gr&aacute;fica o c&oacute;digo hexadecimal.</td>
+                     </tr>
+                     <tr>
+                        <td><code>date</code></td>
+                        <td>Introduce una fecha con a&ntilde;o, mes y d&iacute;a (sin hora).</td>
+                     </tr>
+                     <tr>
+                        <td><code>datetime</code></td>
+                        <td>Permite introducir una fecha y hora basada en la zona horaria UTC.</td>
+                     </tr>
+                     <tr>
+                        <td><code>datetime-local</code></td>
+                        <td>Introduce una fecha y hora local del usuario (sin zona horaria).</td>
+                     </tr>
+                     <tr>
+                        <td><code>email</code></td>
+                        <td>Campo para direcciones de correo electr&oacute;nico con validaci&oacute;n de sintaxis integrada.</td>
+                     </tr>
+                     <tr>
+                        <td><code>month</code></td>
+                        <td>Permite al usuario seleccionar un mes y a&ntilde;o.</td>
+                     </tr>
+                     <tr>
+                        <td><code>number</code></td>
+                        <td>Campo para introducir valores num&eacute;ricos con botones de incremento/decremento.</td>
+                     </tr>
+                     <tr>
+                        <td><code>range</code></td>
+                        <td>Control deslizante para seleccionar un valor dentro de un rango num&eacute;rico espec&iacute;fico.</td>
+                     </tr>
+                     <tr>
+                        <td><code>search</code></td>
+                        <td>Campo optimizado para consultas de b&uacute;squeda de texto.</td>
+                     </tr>
+                     <tr>
+                        <td><code>tel</code></td>
+                        <td>Campo destinado a n&uacute;meros telef&oacute;nicos.</td>
+                     </tr>
+                     <tr>
+                        <td><code>time</code></td>
+                        <td>Permite al usuario introducir una hora (horas y minutos).</td>
+                     </tr>
+                     <tr>
+                        <td><code>url</code></td>
+                        <td>Valida que el texto introducido corresponda a un formato v&aacute;lido de direcci&oacute;n Web.</td>
+                     </tr>
+                     <tr>
+                        <td><code>week</code></td>
+                        <td>Permite elegir un n&uacute;mero de semana y su respectivo a&ntilde;o.</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </details>
+         </article>
+      </section>
+
+      <footer>
+         <p><small>&copy; Deitel &amp; Associates, Inc. Todos los derechos reservados.</small></p>
+      </footer>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

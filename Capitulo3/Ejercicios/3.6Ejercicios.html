@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!-- 3.6Ejercicios.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>3.6Ejercicios</title>
+   </head>
+
+   <body>
+      <h1>Formulario de Registro</h1>
+      <p>Complete los siguientes datos para registrarse:</p>
+
+      <form method="post" action="http://www.deitel.com">
+         <p>
+            <label for="nombre">Primer nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required autofocus />
+         </p>
+
+         <p>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required />
+         </p>
+
+         <p>
+            <label for="correo">Correo electr&oacute;nico:</label><br>
+            <input type="email" id="correo" name="correo" placeholder="nombre@dominio.com" required />
+         </p>
+         <details>
+            <summary><strong>Encuesta opcional para estudiantes universitarios</strong></summary>
+            <p>
+               <label for="anioUni">&iquest;En qu&eacute; a&ntilde;o universitario te encuentras actualmente?</label><br>
+               <select id="anioUni" name="anioUni">
+                  <option value="" selected disabled>Seleccione una opci&oacute;n</option>
+                  <option value="1">Primer a&ntilde;o</option>
+                  <option value="2">Segundo a&ntilde;o</option>
+                  <option value="3">Tercer a&ntilde;o</option>
+                  <option value="4">Cuarto a&ntilde;o</option>
+                  <option value="5">Quinto a&ntilde;o o superior</option>
+                  <option value="posgrado">Posgrado</option>
+               </select>
+            </p>
+         </details>
+
+         <br>
+         <p>
+            <input type="submit" value="Registrarse" />
+            <input type="reset" value="Borrar formulario" />
+         </p>
+      </form>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>
