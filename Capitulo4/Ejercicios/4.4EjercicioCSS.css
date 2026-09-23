@@ -1,0 +1,6 @@
+body {
+   background-image: url(logo.png);
+   background-position: bottom;
+   background-repeat: repeat-x;
+   background-attachment: fixed;
+}

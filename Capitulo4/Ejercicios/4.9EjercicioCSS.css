@@ -1,0 +1,27 @@
+.boton-nav {
+   width: 160px;
+   background-color: #2b5b84;
+   border: 2px solid #1a364e;
+   border-radius: 6px;
+   text-align: center;
+   padding: 10px;
+   transition: background-color 0.3s, border-color 0.3s;
+}
+
+.boton-nav a {
+   color: #ffffff;
+   text-decoration: none;
+   font-family: Arial, sans-serif;
+   font-weight: bold;
+   display: block;
+}
+
+.boton-nav:hover {
+   background-color: #ffcc00;
+   border-color: #cc9900;
+   cursor: pointer;
+}
+
+.boton-nav:hover a {
+   color: #000000;
+}
