@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 5.13 - Flexbox vertical</title>
+      <style type="text/css">
+         .flexbox
+         {
+            display: flex;
+            flex-direction: column; 
+            width: 350px;
+            gap: 15px;
+            font-family: sans-serif;
+         }
+         .flexbox > div
+         {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: lightgrey;
+            box-shadow: 5px 5px 10px dimgrey;
+            transition: all 0.5s ease-out;
+         }
+         .flexbox > div:hover
+         {
+            background-color: royalblue;
+            color: white;
+            transform: scale(1.03);
+         }
+      </style>
+   </head>
+   <body>
+      <div class="flexbox">
+         <div><b>Módulo 1:</b> Buenas prácticas de programación.</div>
+         <div><b>Módulo 2:</b> Prevención de errores comunes.</div>
+         <div><b>Módulo 3:</b> Revisión y corrección de sintaxis.</div>
+         <div><b>Módulo 4:</b> Ingeniería de software moderna.</div>
+      </div>
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar</button></a></p>
+   </body>
+</html>

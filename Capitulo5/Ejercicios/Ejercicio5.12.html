@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 5.12 - Texto multicolumna</title>
+      <style type="text/css">
+         body { font-family: sans-serif; margin: 30px; }
+         .columnas
+         {
+            column-count: 2;
+            column-gap: 40px;
+            column-rule: 3px dashed darkblue;
+            text-align: justify;
+         }
+         .img-flotante
+         {
+            float: left;
+            margin: 0 15px 10px 0;
+            width: 90px;
+            height: 120px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Arquitectura de Computadoras</h1>
+      <h3>Fundamentos y evolución tecnológica</h3>
+      <p><em>Por: Harvey & Paul Deitel</em></p>
+      <hr>
+
+      <div class="columnas">
+         <img src="../Imagenes/jhtp.png" class="img-flotante" alt="Libro">
+         <p>
+            Las computadoras contemporáneas procesan información a velocidades sumamente elevadas.
+            Los procesadores multicore y los sistemas distribuidos permiten balancear cargas
+            de cómputo masivas para aplicaciones científicas y de uso general.
+         </p>
+         <p>
+            La programación orientada a objetos facilita la división de responsabilidades
+            en módulos reutilizables, permitiendo un desarrollo de software robusto
+            y escalable en plataformas heterogéneas.
+         </p>
+         <p>
+            Los periféricos y memorias integradas continúan miniaturizándose gracias
+            a la microelectrónica de precisión, permitiendo que dispositivos integrados
+            realicen tareas analíticas complejas en tiempo real.
+         </p>
+      </div>
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar</button></a></p>
+   </body>
+</html>

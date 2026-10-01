@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.10: bordeimagen.html -->
+<!-- Estirar y repetir una imagen para crear un borde. -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Borde de imagen</title>
+      <style type="text/css">
+         div
+         {
+            border: 30px solid transparent;
+            border-width: 30px;
+            width: 234px;
+            padding: 20px 20px;
+         }
+         #stretch
+         {
+            -webkit-border-image: url(../Imagenes/bordes.png) 80 stretch;
+            -moz-border-image: url(../Imagenes/bordes.png) 80 stretch;
+            -o-border-image: url(../Imagenes/bordes.png) 80 stretch;
+            border-image: url(../Imagenes/bordes.png) 80 stretch;
+         }
+         #repeat
+         {
+            -webkit-border-image: url(../Imagenes/bordes.png) 34% repeat;
+            -moz-border-image: url(../Imagenes/bordes.png) 34% repeat;
+            -o-border-image: url(../Imagenes/bordes.png) 34% repeat;
+            border-image: url(../Imagenes/bordes.png) 34% repeat;
+         }
+      </style>
+   </head>
+   <body>
+      <h2>Bordes de imagen</h2>
+      <!-- Vista previa pequeña de la imagen original -->
+      <img src="../Imagenes/bordes.png" width="80" height="80" alt="imagen utilizada para demostrar los bordes">
+      <p><div id="stretch">Se estira el borde de la imagen</div></p>
+      <p><div id="repeat">Se repite el borde de la imagen</div></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejemplos</button>
+         </a>
+      </p>
+   </body>
+</html>

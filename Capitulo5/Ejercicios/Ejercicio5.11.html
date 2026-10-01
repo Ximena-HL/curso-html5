@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 5.11 - Fusión de 5 imágenes</title>
+      <style type="text/css">
+         #galeria
+         {
+            position: relative;
+            width: 150px;
+            height: 200px;
+            margin: 20px auto;
+         }
+         #galeria img
+         {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 200px;
+            transition-property: opacity;
+            transition-duration: 3s;
+            transition-timing-function: linear;
+         }
+         #galeria img:hover { opacity: 0; }
+      </style>
+   </head>
+   <body>
+      <div id="galeria">
+         <img src="../Imagenes/paisaje1.png" alt="1">
+         <img src="../Imagenes/paisaje2.png" alt="2">
+         <img src="../Imagenes/paisaje3.png" alt="3">
+         <img src="../Imagenes/paisaje4.png" alt="4">
+         <img src="../Imagenes/paisaje5.png" alt="5">
+      </div>
+      <p style="text-align:center;">Pasa el cursor sobre la portada para revelar la siguiente capa en 3 segundos.</p>
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar</button></a></p>
+   </body>
+</html>
