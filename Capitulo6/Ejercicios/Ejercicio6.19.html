@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.19</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.19: Geometría de un círculo</h1>
+      <hr>
+
+      <script>
+         var rCadena = window.prompt("Escriba el radio del círculo:");
+         var r = parseFloat(rCadena);
+         var PI = Math.PI;
+
+         var diametro = 2 * r;
+         var circunferencia = 2 * PI * r;
+         var area = PI * r * r;
+
+         document.writeln("<p>Radio ingresado: <strong>" + r + "</strong></p>");
+         document.writeln("<ul>");
+         document.writeln("<li>Diámetro: " + diametro + "</li>");
+         document.writeln("<li>Circunferencia: " + circunferencia + "</li>");
+         document.writeln("<li>Área: " + area + "</li>");
+         document.writeln("</ul>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.17</title>
+      <script>
+         var num1Cadena = window.prompt("Escriba el primer entero:");
+         var num2Cadena = window.prompt("Escriba el segundo entero:");
+
+         var n1 = parseInt(num1Cadena);
+         var n2 = parseInt(num2Cadena);
+
+         if (n1 > n2) {
+            window.alert(n1 + " es mayor que " + n2);
+         }
+         if (n2 > n1) {
+            window.alert(n2 + " es mayor que " + n1);
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 6.17: Comparación de enteros</h1>
+      <hr>
+
+      <script>
+         if (n1 === n2) {
+            document.writeln("<h2>Estos números son iguales</h2>");
+         } else {
+            document.writeln("<p>Los números ingresados fueron " + n1 + " y " + n2 + ".</p>");
+         }
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.22</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.22: Múltiplos</h1>
+      <hr>
+
+      <script>
+         var num1 = parseInt(window.prompt("Escriba el primer número entero:"));
+         var num2 = parseInt(window.prompt("Escriba el segundo número entero:"));
+
+         if (num1 % num2 == 0) {
+            document.writeln("<p>El número <strong>" + num1 + "</strong> es múltiplo de <strong>" + num2 + "</strong>.</p>");
+         }
+         if (num1 % num2 != 0) {
+            document.writeln("<p>El número <strong>" + num1 + "</strong> NO es múltiplo de <strong>" + num2 + "</strong>.</p>");
+         }
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.16</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.16: Operaciones Aritméticas</h1>
+      <hr>
+
+      <script>
+         var num1Cadena = window.prompt("Escriba el primer número:");
+         var num2Cadena = window.prompt("Escriba el segundo número:");
+
+         var n1 = parseFloat(num1Cadena);
+         var n2 = parseFloat(num2Cadena);
+
+         var suma = n1 + n2;
+         var producto = n1 * n2;
+         var diferencia = n1 - n2;
+         var cociente = n1 / n2;
+
+         document.writeln("<p>Primer número: <strong>" + n1 + "</strong></p>");
+         document.writeln("<p>Segundo número: <strong>" + n2 + "</strong></p>");
+         document.writeln("<ul>");
+         document.writeln("<li>Suma: " + suma + "</li>");
+         document.writeln("<li>Producto: " + producto + "</li>");
+         document.writeln("<li>Diferencia (n1 - n2): " + diferencia + "</li>");
+         document.writeln("<li>Cociente (n1 / n2): " + cociente + "</li>");
+         document.writeln("</ul>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

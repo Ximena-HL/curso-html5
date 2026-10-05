@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.23</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.23: Conteo de Signos</h1>
+      <hr>
+
+      <script>
+         var a = parseFloat(window.prompt("Escriba el primer número:"));
+         var b = parseFloat(window.prompt("Escriba el segundo número:"));
+         var c = parseFloat(window.prompt("Escriba el tercer número:"));
+
+         var negativos = 0;
+         var positivos = 0;
+         var ceros = 0;
+
+         // Evaluar primer número
+         if (a < 0) negativos = negativos + 1;
+         if (a > 0) positivos = positivos + 1;
+         if (a == 0) ceros = ceros + 1;
+
+         // Evaluar segundo número
+         if (b < 0) negativos = negativos + 1;
+         if (b > 0) positivos = positivos + 1;
+         if (b == 0) ceros = ceros + 1;
+
+         // Evaluar tercer número
+         if (c < 0) negativos = negativos + 1;
+         if (c > 0) positivos = positivos + 1;
+         if (c == 0) ceros = ceros + 1;
+
+         document.writeln("<p>Números ingresados: " + a + ", " + b + ", " + c + "</p>");
+         document.writeln("<ul>");
+         document.writeln("<li>Cantidad de números positivos: " + positivos + "</li>");
+         document.writeln("<li>Cantidad de números negativos: " + negativos + "</li>");
+         document.writeln("<li>Cantidad de ceros: " + ceros + "</li>");
+         document.writeln("</ul>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

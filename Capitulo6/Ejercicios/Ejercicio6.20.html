@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.20</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.20: Menor y mayor de 5 enteros</h1>
+      <hr>
+
+      <script>
+         var n1 = parseInt(window.prompt("Escriba el primer entero:"));
+         var n2 = parseInt(window.prompt("Escriba el segundo entero:"));
+         var n3 = parseInt(window.prompt("Escriba el tercer entero:"));
+         var n4 = parseInt(window.prompt("Escriba el cuarto entero:"));
+         var n5 = parseInt(window.prompt("Escriba el quinto entero:"));
+
+         var menor = n1;
+         if (n2 < menor) menor = n2;
+         if (n3 < menor) menor = n3;
+         if (n4 < menor) menor = n4;
+         if (n5 < menor) menor = n5;
+
+         var mayor = n1;
+         if (n2 > mayor) mayor = n2;
+         if (n3 > mayor) mayor = n3;
+         if (n4 > mayor) mayor = n4;
+         if (n5 > mayor) mayor = n5;
+
+         document.writeln("<p>Valores: " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + ", " + n5 + "</p>");
+         document.writeln("<p><strong>Menor:</strong> " + menor + "</p>");
+         document.writeln("<p><strong>Mayor:</strong> " + mayor + "</p>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

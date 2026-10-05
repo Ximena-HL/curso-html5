@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- Figura 6.14: bienvenido5.html -->
+<!-- Demostración del uso de operadores relacionales y de igualdad -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Uso de operadores relacionales</title>
+      <script>
+
+         var nombre;            // Variable para almacenar el texto ingresado
+         var ahora = new Date(); // Objeto fecha con el tiempo actual del sistema
+         var hora = ahora.getHours(); // Lectura de la hora en formato de 0 a 23
+
+         // Captura de datos mediante cuadro de diálogo interactivo
+         nombre = window.prompt( "Escriba su nombre" );
+
+         // Validación del turno matutino (0 a 11 hrs)
+         if ( hora < 12 )
+            document.write( "<h1>Buenos d&iacute;as, " );
+
+         // Validación del turno vespertino y nocturno (12 hrs en adelante)
+         if ( hora >= 12 )
+         {
+            // Ajuste de escala a 12 horas restando 12 unidades
+            hora = hora - 12;
+
+            // Franja de la tarde (antes de las 6 PM)
+            if ( hora < 6 )
+               document.write( "<h1>Buenas tardes, " );
+
+            // Franja nocturna (a partir de las 6 PM)
+            if ( hora >= 6 )
+               document.write( "<h1>Buenas noches, " );
+         }
+
+         // Impresión del nombre y cierre de la etiqueta encabezado
+         document.writeln( nombre + 
+            ", bienvenido a la programaci&oacute;n en JavaScript</h1>" );
+
+      </script>
+   </head>
+   <body>
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejemplos</button>
+         </a>
+      </p>
+   </body>
+</html>

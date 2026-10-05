@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.18</title>
+      <script>
+         var c1 = window.prompt("Escriba el primer entero:");
+         var c2 = window.prompt("Escriba el segundo entero:");
+         var c3 = window.prompt("Escriba el tercer entero:");
+
+         var x = parseInt(c1);
+         var y = parseInt(c2);
+         var z = parseInt(c3);
+
+         var suma = x + y + z;
+         var promedio = suma / 3;
+         var producto = x * y * z;
+
+         // Determinar el menor
+         var menor = x;
+         if (y < menor) menor = y;
+         if (z < menor) menor = z;
+
+         // Determinar el mayor
+         var mayor = x;
+         if (y > mayor) mayor = y;
+         if (z > mayor) mayor = z;
+
+         window.alert("Resultados:\n" +
+            "Suma: " + suma + "\n" +
+            "Promedio: " + promedio + "\n" +
+            "Producto: " + producto + "\n" +
+            "Menor: " + menor + "\n" +
+            "Mayor: " + mayor);
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 6.18: Cálculos con tres enteros</h1>
+      <p>Los cálculos fueron mostrados en la ventana de alerta.</p>
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

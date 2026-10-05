@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 6.14</title>
+   </head>
+   <body>
+      <h1>Ejercicio 6.14: Orden de evaluación de operadores</h1>
+      <hr>
+
+      <h3>a) x = 7 + 3 * 6 / 2 - 1;</h3>
+      <ul>
+         <li>Paso 1: <code>3 * 6</code> = 18 (multiplicación)</li>
+         <li>Paso 2: <code>18 / 2</code> = 9 (división)</li>
+         <li>Paso 3: <code>7 + 9</code> = 16 (suma)</li>
+         <li>Paso 4: <code>16 - 1</code> = 15 (resta)</li>
+         <li>Paso 5: Asignación a <code>x</code></li>
+         <li><strong>Valor final de x: 15</strong></li>
+      </ul>
+
+      <h3>b) x = 2 % 2 + 2 * 2 - 2 / 2;</h3>
+      <ul>
+         <li>Paso 1: <code>2 % 2</code> = 0 (módulo)</li>
+         <li>Paso 2: <code>2 * 2</code> = 4 (multiplicación)</li>
+         <li>Paso 3: <code>2 / 2</code> = 1 (división)</li>
+         <li>Paso 4: <code>0 + 4</code> = 4 (suma)</li>
+         <li>Paso 5: <code>4 - 1</code> = 3 (resta)</li>
+         <li>Paso 6: Asignación a <code>x</code></li>
+         <li><strong>Valor final de x: 3</strong></li>
+      </ul>
+
+      <h3>c) x = ( 3 * 9 * ( 3 + ( 9 * 3 / ( 3 ) ) ) );</h3>
+      <ul>
+         <li>Paso 1: <code>( 3 )</code> = 3 (paréntesis interior)</li>
+         <li>Paso 2: <code>9 * 3</code> = 27 (multiplicación interior)</li>
+         <li>Paso 3: <code>27 / 3</code> = 9 (división interior)</li>
+         <li>Paso 4: <code>3 + 9</code> = 12 (suma dentro del paréntesis)</li>
+         <li>Paso 5: <code>3 * 9</code> = 27 (multiplicación de izquierda a derecha)</li>
+         <li>Paso 6: <code>27 * 12</code> = 324 (multiplicación final)</li>
+         <li>Paso 7: Asignación a <code>x</code></li>
+         <li><strong>Valor final de x: 324</strong></li>
+      </ul>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>
