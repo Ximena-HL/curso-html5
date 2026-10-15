@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.23</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.23: Descifrado de Datos</h1>
+      <hr>
+
+      <script>
+         var entrada = window.prompt("Ingrese el número cifrado de 4 dígitos:");
+         var num = parseInt(entrada);
+
+         // Separar los dígitos cifrados actuales
+         var c1 = Math.floor(num / 1000);
+         var c2 = Math.floor((num % 1000) / 100);
+         var c3 = Math.floor((num % 100) / 10);
+         var c4 = num % 10;
+
+         // Revertir el intercambio: el original d1 vino de c3, d2 de c4, d3 de c1, d4 de c2
+         // Para revertir (x + 7) % 10 se suma 3 y se aplica % 10: (c + 10 - 7) % 10 = (c + 3) % 10
+         var d1 = (c3 + 3) % 10;
+         var d2 = (c4 + 3) % 10;
+         var d3 = (c1 + 3) % 10;
+         var d4 = (c2 + 3) % 10;
+
+         var descifrado = "" + d1 + d2 + d3 + d4;
+
+         document.writeln("<p>Número cifrado: <strong>" + entrada + "</strong></p>");
+         document.writeln("<h2>Número descifrado (original): " + descifrado + "</h2>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.12</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.12: Límite de Crédito</h1>
+      <hr>
+
+      <script>
+         var cuenta = window.prompt("Número de cuenta (-1 para salir):");
+
+         while (cuenta != "-1") {
+            var saldoInicial = parseFloat(window.prompt("Saldo al inicio del mes:"));
+            var cargos = parseFloat(window.prompt("Total de artículos cargados al mes:"));
+            var creditos = parseFloat(window.prompt("Total de créditos aplicados:"));
+            var limite = parseFloat(window.prompt("Límite de crédito permitido:"));
+
+            var nuevoSaldo = saldoInicial + cargos - creditos;
+
+            document.writeln("<p><strong>Cuenta:</strong> " + cuenta + "</p>");
+            document.writeln("<p>Nuevo saldo: $" + nuevoSaldo.toFixed(2) + "</p>");
+            document.writeln("<p>Límite permitido: $" + limite.toFixed(2) + "</p>");
+
+            if (nuevoSaldo > limite) {
+               document.writeln("<p style='color:red;'><strong>Se excedió el límite de su crédito.</strong></p>");
+            } else {
+               document.writeln("<p style='color:green;'>Crédito dentro del límite.</p>");
+            }
+            document.writeln("<hr>");
+
+            cuenta = window.prompt("Número de cuenta (-1 para salir):");
+         }
+      </script>
+
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

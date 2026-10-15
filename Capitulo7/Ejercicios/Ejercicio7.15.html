@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.15</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.15: Encontrar el Mayor de 10 Números</h1>
+      <hr>
+
+      <script>
+         var contador = 1;
+         var numero;
+         var mayor;
+
+         numero = parseInt(window.prompt("Ingrese el número 1:"));
+         mayor = numero;
+
+         while (contador < 10) {
+            contador = contador + 1;
+            numero = parseInt(window.prompt("Ingrese el número " + contador + ":"));
+
+            if (numero > mayor) {
+               mayor = numero;
+            }
+         }
+
+         document.writeln("<h3>El número más grande de los 10 ingresados es: " + mayor + "</h3>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

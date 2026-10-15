@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.14</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.14: Sueldo Bruto de Empleados</h1>
+      <hr>
+
+      <script>
+         var empleado = 1;
+
+         while (empleado <= 3) {
+            var horas = parseFloat(window.prompt("Empleado " + empleado + ": Horas trabajadas:", "0"));
+            var tarifa = parseFloat(window.prompt("Empleado " + empleado + ": Tarifa por hora ($):", "0"));
+            var sueldoBruto = 0;
+
+            if (horas <= 40) {
+               sueldoBruto = horas * tarifa;
+            } else {
+               sueldoBruto = (40 * tarifa) + ((horas - 40) * (tarifa * 1.5));
+            }
+
+            document.writeln("<p><strong>Empleado " + empleado + ":</strong></p>");
+            document.writeln("<ul>");
+            document.writeln("<li>Horas trabajadas: " + horas + "</li>");
+            document.writeln("<li>Tarifa horaria: $" + tarifa.toFixed(2) + "</li>");
+            document.writeln("<li>Sueldo bruto: <strong>$" + sueldoBruto.toFixed(2) + "</strong></li>");
+            document.writeln("</ul><hr>");
+
+            empleado = empleado + 1;
+         }
+      </script>
+
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

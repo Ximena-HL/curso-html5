@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.13</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.13: Comisiones de Ventas</h1>
+      <hr>
+
+      <script>
+         var v1 = parseInt(window.prompt("Cantidad vendida del Artículo 1 ($239.99):", "0"));
+         var v2 = parseInt(window.prompt("Cantidad vendida del Artículo 2 ($129.75):", "0"));
+         var v3 = parseInt(window.prompt("Cantidad vendida del Artículo 3 ($99.95):", "0"));
+         var v4 = parseInt(window.prompt("Cantidad vendida del Artículo 4 ($350.89):", "0"));
+
+         var ventasBrutas = (v1 * 239.99) + (v2 * 129.75) + (v3 * 99.95) + (v4 * 350.89);
+         var comision = ventasBrutas * 0.09;
+         var ingresosTotales = 200.00 + comision;
+
+         document.writeln("<p>Ventas brutas calculadas: $" + ventasBrutas.toFixed(2) + "</p>");
+         document.writeln("<p>Comisión (9%): $" + comision.toFixed(2) + "</p>");
+         document.writeln("<p>Sueldo base: $200.00</p>");
+         document.writeln("<h3>Ingresos totales del vendedor: $" + ingresosTotales.toFixed(2) + "</h3>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

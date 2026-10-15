@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.20</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.20: Palíndromo de 5 dígitos</h1>
+      <hr>
+
+      <script>
+         var entrada = window.prompt("Ingrese un número entero de 5 dígitos:");
+
+         while (entrada.length != 5 || isNaN(parseInt(entrada))) {
+            window.alert("Error: El número ingresado no tiene exactamente 5 dígitos.");
+            entrada = window.prompt("Ingrese de nuevo un número entero de 5 dígitos:");
+         }
+
+         var num = parseInt(entrada);
+
+         // Extraer cada dígito con división entera y módulo
+         var d1 = Math.floor(num / 10000);
+         var d2 = Math.floor((num % 10000) / 1000);
+         var d4 = Math.floor((num % 100) / 10);
+         var d5 = num % 10;
+
+         // Para ser palíndromo, el 1ro debe ser igual al 5to, y el 2do igual al 4to
+         if (d1 === d5 && d2 === d4) {
+            document.writeln("<h2>El número " + num + " ES un palíndromo.</h2>");
+         } else {
+            document.writeln("<h2>El número " + num + " NO es un palíndromo.</h2>");
+         }
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

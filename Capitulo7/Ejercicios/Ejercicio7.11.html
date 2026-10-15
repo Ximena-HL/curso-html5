@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.11</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.11: Kilometraje de Automóviles</h1>
+      <hr>
+
+      <script>
+         var totalKilometros = 0;
+         var totalLitros = 0;
+         var viaje = 1;
+
+         var entradaKm = window.prompt("Viaje 1: Ingrese los kilómetros conducidos (-1 para terminar):", "0");
+         var km = parseFloat(entradaKm);
+
+         while (km != -1) {
+            var entradaLitros = window.prompt("Viaje " + viaje + ": Ingrese los litros usados:", "0");
+            var litros = parseFloat(entradaLitros);
+
+            var kmPorLitro = km / litros;
+            totalKilometros = totalKilometros + km;
+            totalLitros = totalLitros + litros;
+
+            document.writeln("<p><strong>Viaje " + viaje + ":</strong> " + kmPorLitro.toFixed(2) + " km/litro</p>");
+            document.writeln("<p><em>Total acumulado hasta este punto:</em> " + (totalKilometros / totalLitros).toFixed(2) + " km/litro</p><hr>");
+
+            viaje = viaje + 1;
+            entradaKm = window.prompt("Viaje " + viaje + ": Ingrese los kilómetros conducidos (-1 para terminar):", "0");
+            km = parseFloat(entradaKm);
+         }
+
+         if (totalLitros != 0) {
+            document.writeln("<h3>Promedio total final: " + (totalKilometros / totalLitros).toFixed(2) + " km/litro</h3>");
+         } else {
+            document.writeln("<p>No se ingresaron datos de viajes.</p>");
+         }
+      </script>
+
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

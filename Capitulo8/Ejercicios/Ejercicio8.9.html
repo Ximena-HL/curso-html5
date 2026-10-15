@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.9</title>
+      <style>
+         .barra {
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: darkblue;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.9: Histograma con asteriscos</h1>
+      <hr>
+
+      <script>
+         for ( var i = 1; i <= 5; ++i )
+         {
+            var num = parseInt( window.prompt( "Ingrese el número " + i + " (entre 1 y 30):", "1" ) );
+
+            // Validar que esté en el rango de 1 a 30
+            while ( isNaN( num ) || num < 1 || num > 30 )
+            {
+               window.alert( "Número inválido. Debe estar entre 1 y 30." );
+               num = parseInt( window.prompt( "Ingrese nuevamente el número " + i + " (entre 1 y 30):", "1" ) );
+            }
+
+            var asteriscos = "";
+            for ( var j = 1; j <= num; ++j )
+               asteriscos += "*";
+
+            document.writeln( "<p><strong>Número " + i + " (" + num + "):</strong> <span class='barra'>" + asteriscos + "</span></p>" );
+         }
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

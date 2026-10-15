@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.12</title>
+      <style>
+         table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+         }
+         table, th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+         }
+         th {
+            background-color: #f2f2f2;
+         }
+         code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.12: Evaluación de expresiones lógicas</h1>
+      <p>Valores dados: <code>i = 1</code>, <code>j = 2</code>, <code>k = 3</code>, <code>m = 2</code>.</p>
+      <hr>
+
+      <table>
+         <tr>
+            <th>Instrucción</th>
+            <th>Salida en pantalla</th>
+            <th>¿Son necesarios los paréntesis?</th>
+         </tr>
+         <tr>
+            <td><code>document.writeln( i == 1 );</code></td>
+            <td><strong>true</strong></td>
+            <td>No. Los operadores de igualdad tienen menor precedencia que los paréntesis de la llamada a la función, pero la expresión se evalúa de forma natural.</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( j == 3 );</code></td>
+            <td><strong>false</strong></td>
+            <td>No.</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( i >= 1 && j < 4 );</code></td>
+            <td><strong>true</strong> (ambas condiciones son verdaderas)</td>
+            <td>No. Los operadores relacionales (<code>>=</code>, <code><</code>) tienen mayor precedencia que el operador lógico AND (<code>&&</code>).</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( m <= 99 && k < m );</code></td>
+            <td><strong>false</strong> (<code>3 < 2</code> es falso)</td>
+            <td>No. Los relacionales se evalúan antes que el <code>&&</code>.</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( j >= i || k == m );</code></td>
+            <td><strong>true</strong> (<code>2 >= 1</code> es verdadero)</td>
+            <td>No. Los relacionales y de igualdad tienen mayor precedencia que el operador lógico OR (<code>||</code>).</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( k + m < j || 3 - j >= k );</code></td>
+            <td><strong>false</strong> (<code>5 < 2</code> es falso y <code>1 >= 3</code> es falso)</td>
+            <td>No. Los operadores aritméticos (<code>+</code>, <code>-</code>) tienen la precedencia más alta, seguidos de los relacionales (<code><</code>, <code>>=</code>) y finalmente el operador OR (<code>||</code>).</td>
+         </tr>
+         <tr>
+            <td><code>document.writeln( !( k > m ) );</code></td>
+            <td><strong>false</strong> (<code>!( 3 > 2 )</code> &rarr; <code>!true</code>)</td>
+            <td><strong>Sí</strong>. Son necesarios para que <code>k > m</code> se evalúe antes de aplicar el operador de negación lógica <code>!</code>, el cual posee una precedencia mayor que el operador relacional.</td>
+         </tr>
+      </table>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.8</title>
+      <style>
+         table {
+            width: 320px;
+            border-collapse: collapse;
+            background-color: lightblue;
+            margin-bottom: 25px;
+         }
+         table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: center;
+         }
+         th {
+            color: white;
+            background-color: darkblue;
+         }
+         tr.filaimpar {
+            background-color: white;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.8: Interés compuesto con diferentes tasas</h1>
+      <hr>
+
+      <script>
+         var principal = 1000.00;
+
+         // Ciclo exterior para variar la tasa del 5% al 10%
+         for ( var porcentaje = 5; porcentaje <= 10; ++porcentaje )
+         {
+            var tasa = porcentaje / 100.0;
+
+            document.writeln( "<table>" );
+            document.writeln( "<caption><strong>Tasa de inter&eacute;s: " + porcentaje + "%</strong></caption>" );
+            document.writeln( "<thead><tr><th>A&ntilde;o</th><th>Monto en dep&oacute;sito</th></tr></thead><tbody>" );
+
+            for ( var anio = 1; anio <= 10; ++anio )
+            {
+               var monto = principal * Math.pow( 1.0 + tasa, anio );
+
+               if ( anio % 2 !== 0 )
+                  document.writeln( "<tr class='filaimpar'><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>" );
+               else
+                  document.writeln( "<tr><td>" + anio + "</td><td>" + monto.toFixed(2) + "</td></tr>" );
+            }
+
+            document.writeln( "</tbody></table>" );
+         }
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

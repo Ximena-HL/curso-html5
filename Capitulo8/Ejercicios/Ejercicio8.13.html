@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.13</title>
+      <style>
+         pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #333;
+            font-family: monospace;
+         }
+         code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.13: Seguimiento de instrucción switch</h1>
+      <hr>
+
+      <p><strong>Pregunta:</strong> ¿Qué valores se asignan a <code>x</code> cuando <code>k</code> tiene valores de 1, 2, 3, 4 y 10?</p>
+
+      <ul>
+         <li>
+            <strong>Cuando k = 1:</strong>
+            <p>Coincide con <code>case 1:</code>, donde solo se ejecuta <code>break;</code> sin modificar <code>k</code>. Luego se asigna <code>x = k</code>.<br>
+            &rarr; <strong>x = 1</strong></p>
+         </li>
+         <li>
+            <strong>Cuando k = 2:</strong>
+            <p>Coincide con <code>case 2:</code>. Al no tener instrucción ni <code>break</code>, pasa directo a <code>case 3:</code> (*fall-through*), ejecutando <code>++k</code> (pasa a 3) y saliendo con <code>break</code>. Finalmente se asigna <code>x = k</code>.<br>
+            &rarr; <strong>x = 3</strong></p>
+         </li>
+         <li>
+            <strong>Cuando k = 3:</strong>
+            <p>Coincide con <code>case 3:</code>, se ejecuta <code>++k</code> (pasa a 4) y sale con <code>break</code>. Luego se asigna <code>x = k</code>.<br>
+            &rarr; <strong>x = 4</strong></p>
+         </li>
+         <li>
+            <strong>Cuando k = 4:</strong>
+            <p>Coincide con <code>case 4:</code>, se ejecuta <code>--k</code> (pasa a 3) y sale con <code>break</code>. Luego se asigna <code>x = k</code>.<br>
+            &rarr; <strong>x = 3</strong></p>
+         </li>
+         <li>
+            <strong>Cuando k = 10:</strong>
+            <p>No coincide con ningún caso, por lo que entra al bloque <code>default:</code> ejecutando <code>k *= 3</code> (10 * 3 = 30). Luego se asigna <code>x = k</code>.<br>
+            &rarr; <strong>x = 30</strong></p>
+         </li>
+      </ul>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

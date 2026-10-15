@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.17</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.17: Los Dos Valores Más Grandes</h1>
+      <hr>
+
+      <script>
+         var num1 = parseInt(window.prompt("Ingrese el número 1:"));
+         var num2 = parseInt(window.prompt("Ingrese el número 2:"));
+
+         var mayor1, mayor2;
+
+         if (num1 > num2) {
+            mayor1 = num1;
+            mayor2 = num2;
+         } else {
+            mayor1 = num2;
+            mayor2 = num1;
+         }
+
+         var cuenta = 3;
+         while (cuenta <= 10) {
+            var actual = parseInt(window.prompt("Ingrese el número " + cuenta + ":"));
+
+            if (actual > mayor1) {
+               mayor2 = mayor1;
+               mayor1 = actual;
+            } else if (actual > mayor2) {
+               mayor2 = actual;
+            }
+
+            cuenta = cuenta + 1;
+         }
+
+         document.writeln("<p><strong>El número más grande es:</strong> " + mayor1 + "</p>");
+         document.writeln("<p><strong>El segundo número más grande es:</strong> " + mayor2 + "</p>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

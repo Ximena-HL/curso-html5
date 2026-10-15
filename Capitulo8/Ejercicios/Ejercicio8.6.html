@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.6</title>
+   </head>
+   <body>
+      <h1>Ejercicio 8.6: El menor de varios enteros</h1>
+      <hr>
+
+      <script>
+         var cantidad = parseInt( window.prompt( "Escriba la cantidad de enteros a procesar:", "0" ) );
+
+         if ( cantidad > 0 )
+         {
+            var menor = parseInt( window.prompt( "Escriba el entero 1:", "0" ) );
+
+            for ( var i = 2; i <= cantidad; ++i )
+            {
+               var valor = parseInt( window.prompt( "Escriba el entero " + i + ":", "0" ) );
+
+               if ( valor < menor )
+                  menor = valor;
+            }
+
+            document.writeln( "<p>Cantidad de valores evaluados: <strong>" + cantidad + "</strong></p>" );
+            document.writeln( "<h2>El menor de los números introducidos es: " + menor + "</h2>" );
+         }
+         else
+         {
+            document.writeln( "<p>No se especificó una cantidad válida de valores.</p>" );
+         }
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

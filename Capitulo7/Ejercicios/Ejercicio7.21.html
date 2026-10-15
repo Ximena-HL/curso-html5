@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.21</title>
+   </head>
+   <body>
+      <h1>Ejercicio 7.21: Múltiplos de 2</h1>
+      <hr>
+
+      <h3>Explicación teórica de la pregunta:</h3>
+      <p><em>¿Qué ocurre al ejecutar un ciclo infinito que imprime múltiplos de 2 sin condición de paro?</em><br>
+      La pestaña del navegador se congelará debido a que el hilo principal entra en saturación de CPU y memoria. Los navegadores modernos eventualmente mostrarán un aviso advirtiendo que la página no responde con la opción de forzar su detención.</p>
+
+      <h3>Demostración (primeros 30 múltiplos de 2):</h3>
+      <script>
+         var multiplo = 2;
+         var paso = 1;
+
+         // Para fines de ejecución controlada en el navegador se limita a 30 pasos
+         while (paso <= 30) {
+            document.writeln(multiplo + "<br>");
+            multiplo = multiplo * 2;
+            paso = paso + 1;
+         }
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>

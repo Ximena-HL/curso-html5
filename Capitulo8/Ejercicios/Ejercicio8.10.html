@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.10</title>
+   </head>
+   <body>
+      <h1>Ejercicio 8.10: Los Doce Días de Navidad</h1>
+      <hr>
+
+      <script>
+         for ( var dia = 1; dia <= 12; ++dia )
+         {
+            var diaTexto = "";
+
+            switch ( dia )
+            {
+               case 1:  diaTexto = "primer"; break;
+               case 2:  diaTexto = "segundo"; break;
+               case 3:  diaTexto = "tercer"; break;
+               case 4:  diaTexto = "cuarto"; break;
+               case 5:  diaTexto = "quinto"; break;
+               case 6:  diaTexto = "sexto"; break;
+               case 7:  diaTexto = "séptimo"; break;
+               case 8:  diaTexto = "octavo"; break;
+               case 9:  diaTexto = "noveno"; break;
+               case 10: diaTexto = "décimo"; break;
+               case 11: diaTexto = "undécimo"; break;
+               case 12: diaTexto = "duodécimo"; break;
+            }
+
+            document.writeln( "<h3>En el " + diaTexto + " día de Navidad, mi verdadero amor me envió:</h3>" );
+            document.writeln( "<ul>" );
+
+            // switch con efecto fall-through hacia abajo para acumular los regalos
+            switch ( dia )
+            {
+               case 12: document.writeln( "<li>Doce tamborileros tocando el tambor</li>" );
+               case 11: document.writeln( "<li>Once gaiteros tocando la gaita</li>" );
+               case 10: document.writeln( "<li>Diez señores saltando</li>" );
+               case 9:  document.writeln( "<li>Nueve damas bailando</li>" );
+               case 8:  document.writeln( "<li>Ocho criadas ordeñando</li>" );
+               case 7:  document.writeln( "<li>Siete cisnes nadando</li>" );
+               case 6:  document.writeln( "<li>Seis gansos empollando</li>" );
+               case 5:  document.writeln( "<li>Cinco anillos dorados</li>" );
+               case 4:  document.writeln( "<li>Cuatro aves llamando</li>" );
+               case 3:  document.writeln( "<li>Tres gallinas francesas</li>" );
+               case 2:  document.writeln( "<li>Dos tórtolas y</li>" );
+               case 1:  document.writeln( "<li>Una perdiz en un peral</li>" );
+            }
+
+            document.writeln( "</ul>" );
+         }
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

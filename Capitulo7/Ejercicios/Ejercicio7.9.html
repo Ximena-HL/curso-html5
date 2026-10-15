@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.9</title>
+      <style>
+         pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #333;
+            font-family: monospace;
+         }
+         code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.9: Identificación y corrección de errores</h1>
+      <hr>
+
+      <h3>a)</h3>
+      <p><strong>Error:</strong> Hay un punto y coma (<code>;</code>) al final de la condición del <code>if</code>, lo que finaliza prematuramente la estructura y deja al <code>else</code> huérfano, generando un error de sintaxis.</p>
+      <p><strong>Corrección:</strong></p>
+      <pre>if ( edad >= 65 )
+   document.writeln( "Edad es mayor o igual que 65" );
+else
+   document.writeln( "Edad es menor que 65" );</pre>
+
+      <h3>b)</h3>
+      <p><strong>Error:</strong> La variable <code>total</code> no fue inicializada numéricamente (contiene <code>undefined</code>). La operación <code>total += x</code> produce <code>NaN</code>.</p>
+      <p><strong>Corrección:</strong></p>
+      <pre>var x = 1;
+var total = 0;
+while ( x <= 10 )
+{
+   total += x;
+   ++x;
+}</pre>
+
+      <h3>c)</h3>
+      <p><strong>Error:</strong> El ciclo <code>while</code> no tiene llaves <code>{ }</code>. Solo la línea <code>total += x;</code> forma parte del cuerpo del ciclo, por lo que <code>++x;</code> nunca se ejecuta y se genera un ciclo infinito.</p>
+      <p><strong>Corrección:</strong></p>
+      <pre>var x = 1;
+var total = 0;
+while ( x <= 100 )
+{
+   total += x;
+   ++x;
+}</pre>
+
+      <h3>d)</h3>
+      <p><strong>Error:</strong> La variable <code>y</code> inicia en 5 y la condición es <code>y > 0</code>, pero se usa un incremento (<code>++y</code>). El valor de <code>y</code> aumenta continuamente hacia infinito, produciendo un ciclo infinito.</p>
+      <p><strong>Corrección:</strong></p>
+      <pre>var y = 5;
+while ( y > 0 )
+{
+   document.writeln( y );
+   --y;
+}</pre>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>

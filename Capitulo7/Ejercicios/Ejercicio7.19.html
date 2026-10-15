@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.19</title>
+      <style>
+         pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #333;
+            font-family: monospace;
+         }
+         code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.19: El problema del else suelto</h1>
+      <hr>
+
+      <p>En JavaScript, un <code>else</code> se asocia por defecto con el <code>if</code> más cercano disponible a menos que se utilicen llaves <code>{ }</code>.</p>
+
+      <h3>Inciso a) Sin llaves que delimiten:</h3>
+      <p>El <code>else</code> pertenece al <code>if ( y > 10 )</code> interno.</p>
+      <ul>
+         <li><strong>Para x = 9, y = 11:</strong> Cumple <code>x &lt; 10</code> y <code>y &gt; 10</code>. Imprime:<br>
+            <pre>*****
+$$$$$</pre>
+         </li>
+         <li><strong>Para x = 11, y = 9:</strong> No cumple <code>x &lt; 10</code>, omite el bloque anidado e imprime únicamente la instrucción final:<br>
+            <pre>$$$$$</pre>
+         </li>
+      </ul>
+
+      <h3>Inciso b) Con llaves:</h3>
+      <p>Las llaves encierran al <code>if ( y > 10 )</code>, forzando a que el <code>else</code> corresponda al <code>if ( x < 10 )</code> exterior.</p>
+      <ul>
+         <li><strong>Para x = 9, y = 11:</strong> Cumple <code>x &lt; 10</code> y <code>y &gt; 10</code>. Ejecuta el bloque interno y no entra al <code>else</code>. Imprime únicamente:<br>
+            <pre>*****</pre>
+         </li>
+         <li><strong>Para x = 11, y = 9:</strong> No cumple <code>x &lt; 10</code>, entra al bloque <code>else</code> e imprime:<br>
+            <pre>#####
+$$$$$</pre>
+         </li>
+      </ul>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

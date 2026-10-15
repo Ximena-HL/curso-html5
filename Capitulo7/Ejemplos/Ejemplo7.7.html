@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Programa del promedio de una clase</title>
+      <script>
+
+         var total; // Acumulador para la suma de las calificaciones
+         var contadorCalificaciones; // Contador de iteraciones
+         var calificacion; // Entrada recibida del usuario en formato de texto
+         var valorCalificacion; // Calificación convertida a número entero
+         var promedio; // Resultado final del promedio calculado
+
+         // Fase de inicialización
+         total = 0;
+         contadorCalificaciones = 1;
+
+         // Fase de procesamiento: ciclo controlado por contador (10 repeticiones)
+         while ( contadorCalificaciones <= 10 )
+         {
+            // Lectura de cada calificación mediante prompt (con valor inicial "0")
+            calificacion = window.prompt( "Escriba la calificación entera:", "0" );
+
+            // Conversión de la cadena de texto a valor entero
+            valorCalificacion = parseInt( calificacion );
+
+            // Acumular la calificación al total
+            total = total + valorCalificacion;
+
+            // Incrementar el contador en 1
+            contadorCalificaciones = contadorCalificaciones + 1;
+         }
+
+         // Fase de terminación: cálculo del promedio
+         promedio = total / 10;
+
+         // Impresión del resultado en el documento HTML
+         document.writeln( "<h1>El promedio de la clase es " + promedio + "</h1>" );
+
+      </script>
+   </head>
+   <body>
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejemplos</button>
+         </a>
+      </p>
+   </body>
+</html>

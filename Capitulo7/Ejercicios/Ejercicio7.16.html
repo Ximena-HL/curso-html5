@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.16</title>
+      <style>
+         table {
+            border-collapse: collapse;
+            margin: 20px 0;
+         }
+         table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 4px 15px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.16: Tabla de Múltiplos</h1>
+      <hr>
+
+      <script>
+         document.writeln("<table>");
+         document.writeln("<tr><th>N</th><th>10*N</th><th>100*N</th><th>1000*N</th></tr>");
+
+         var n = 1;
+         while (n <= 6) {
+            document.writeln("<tr>" +
+               "<td>" + n + "</td>" +
+               "<td>" + (n * 10) + "</td>" +
+               "<td>" + (n * 100) + "</td>" +
+               "<td>" + (n * 1000) + "</td>" +
+               "</tr>");
+            n = n + 1;
+         }
+
+         document.writeln("</table>");
+      </script>
+
+      <hr>
+      <p><a href="index.html"><button type="button">&larr; Regresar a Ejercicios</button></a></p>
+   </body>
+</html>
