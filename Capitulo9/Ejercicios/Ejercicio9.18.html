@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.18</title>
+      <script>
+         function minimo3( a, b, c )
+         {
+            return Math.min( a, Math.min( b, c ) );
+         }
+
+         function evaluar()
+         {
+            var v1 = parseFloat( document.getElementById( "n1" ).value );
+            var v2 = parseFloat( document.getElementById( "n2" ).value );
+            var v3 = parseFloat( document.getElementById( "n3" ).value );
+
+            if ( !isNaN( v1 ) && !isNaN( v2 ) && !isNaN( v3 ) )
+            {
+               var menor = minimo3( v1, v2, v3 );
+               document.getElementById( "salida" ).innerHTML =
+                  "El n&uacute;mero menor entre los tres es: <strong>" + menor + "</strong>";
+            }
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnCalcular" ).addEventListener( "click", evaluar, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.18: Menor de tres números flotantes</h1>
+      <hr>
+
+      <form action="#">
+         <label for="n1">N&uacute;mero 1:</label> <input type="number" id="n1" step="any"><br><br>
+         <label for="n2">N&uacute;mero 2:</label> <input type="number" id="n2" step="any"><br><br>
+         <label for="n3">N&uacute;mero 3:</label> <input type="number" id="n3" step="any"><br><br>
+         <input type="button" id="btnCalcular" value="Determinar Menor">
+      </form>
+
+      <p id="salida"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

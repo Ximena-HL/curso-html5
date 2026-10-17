@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejemplo de alcance</title>
+      <style>
+         p         { margin: 0px; }
+         p.espacio { margin-top: 10px; }
+      </style>
+      <script>
+         var salida; // Cadena que acumula el resultado
+         var x = 1;  // Variable global
+
+         function iniciar()
+         {
+            var x = 5; // Variable local a iniciar()
+
+            salida = "<p>la x local en iniciar es " + x + "</p>";
+
+            funcionA();
+            funcionB();
+            funcionA();
+            funcionB();
+
+            salida += "<p class='espacio'>la x local en iniciar es " + x + "</p>";
+            document.getElementById( "resultados" ).innerHTML = salida;
+         }
+
+         function funcionA()
+         {
+            var x = 25; // Se inicializa cada vez que se llama a funcionA
+            salida += "<p class='espacio'>la x local en la funcionA es " + x + " después de entrar</p>";
+            ++x;
+            salida += "<p>la x local en funcionA es " + x + " antes de salir</p>";
+         }
+
+         function funcionB()
+         {
+            salida += "<p class='espacio'>la variable global x es " + x + " al entrar a la funcionB</p>";
+            x *= 10;
+            salida += "<p>la variable global x es " + x + " al salir de la funcionB</p>";
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Demostración del alcance de variables</h1>
+      <div id="resultados"></div>
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejemplos</button>
+         </a>
+      </p>
+   </body>
+</html>

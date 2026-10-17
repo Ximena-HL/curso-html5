@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.28</title>
+      <script>
+         var saldoBanco = 1000;
+         var apuestaActual = 0;
+         var miPunto = 0;
+
+         function iniciarJuego()
+         {
+            var campoApuesta = document.getElementById( "apuesta" );
+            apuestaActual = parseInt( campoApuesta.value );
+
+            if ( isNaN( apuestaActual ) || apuestaActual <= 0 || apuestaActual > saldoBanco )
+            {
+               alert( "Por favor introduzca una apuesta válida (entre 1 y " + saldoBanco + ")." );
+               return;
+            }
+
+            document.getElementById( "btnJugar" ).disabled = true;
+            document.getElementById( "apuesta" ).disabled = true;
+
+            var d1 = tirarDado();
+            var d2 = tirarDado();
+            var suma = d1 + d2;
+
+            document.getElementById( "tiro" ).innerHTML = "Tiró: " + d1 + " + " + d2 + " = <strong>" + suma + "</strong>";
+
+            switch ( suma )
+            {
+               case 7:
+               case 11:
+                  ganar();
+                  break;
+               case 2:
+               case 3:
+               case 12:
+                  perder();
+                  break;
+               default:
+                  miPunto = suma;
+                  document.getElementById( "mensajes" ).innerHTML = "Su punto es <strong>" + miPunto + "</strong>. ¡Tire de nuevo!";
+                  document.getElementById( "btnTirar" ).disabled = false;
+                  generarComentario();
+                  break;
+            }
+         }
+
+         function tirarDeNuevo()
+         {
+            var d1 = tirarDado();
+            var d2 = tirarDado();
+            var suma = d1 + d2;
+
+            document.getElementById( "tiro" ).innerHTML = "Tiró: " + d1 + " + " + d2 + " = <strong>" + suma + "</strong>";
+
+            if ( suma === miPunto )
+               ganar();
+            else if ( suma === 7 )
+               perder();
+            else
+               generarComentario();
+         }
+
+         function ganar()
+         {
+            saldoBanco += apuestaActual;
+            actualizarEstado( "¡Ha ganado!", true );
+         }
+
+         function perder()
+         {
+            saldoBanco -= apuestaActual;
+            if ( saldoBanco === 0 )
+            {
+               actualizarEstado( "¡Lo siento. Está en bancarrota!", false );
+               document.getElementById( "btnJugar" ).disabled = true;
+            }
+            else
+            {
+               actualizarEstado( "Lo siento, ha perdido su apuesta.", true );
+            }
+         }
+
+         function actualizarEstado( msg, permitirSeguir )
+         {
+            document.getElementById( "mensajes" ).innerHTML = msg;
+            document.getElementById( "saldo" ).innerHTML = "$" + saldoBanco;
+            document.getElementById( "btnTirar" ).disabled = true;
+
+            if ( permitirSeguir )
+            {
+               document.getElementById( "btnJugar" ).disabled = false;
+               document.getElementById( "apuesta" ).disabled = false;
+            }
+         }
+
+         function tirarDado()
+         {
+            return Math.floor( 1 + Math.random() * 6 );
+         }
+
+         function generarComentario()
+         {
+            var frases = [
+               "¿Así que se va a quedar en bancarrota?",
+               "¡Vamos, arriésguese!",
+               "¡Está teniendo éxito!",
+               "¡Ahora es momento de cambiar sus fichas!"
+            ];
+            var indice = Math.floor( Math.random() * frases.length );
+            document.getElementById( "charla" ).innerHTML = "<em>" + frases[indice] + "</em>";
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnJugar" ).addEventListener( "click", iniciarJuego, false );
+            document.getElementById( "btnTirar" ).addEventListener( "click", tirarDeNuevo, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.28: Craps con Apuestas</h1>
+      <hr>
+
+      <h2>Saldo en Banco: <span id="saldo">$1000</span></h2>
+
+      <form action="#" onsubmit="return false;">
+         <label for="apuesta">Monto de la apuesta:</label>
+         <input type="number" id="apuesta" min="1" max="1000" value="100">
+         <input type="button" id="btnJugar" value="Apostar y Lanzar">
+         <input type="button" id="btnTirar" value="Tirar de nuevo" disabled>
+      </form>
+
+      <p id="tiro"></p>
+      <h3 id="mensajes"></h3>
+      <p id="charla"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

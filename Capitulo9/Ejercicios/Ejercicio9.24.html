@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.24</title>
+      <script>
+         var factor1, factor2, productoCorrecto;
+         var correctas = 0;
+         var totalPreguntas = 0;
+         var esPrimerIntento = true;
+
+         function generarPregunta()
+         {
+            if ( totalPreguntas === 10 )
+            {
+               evaluarRendimiento();
+               return;
+            }
+
+            factor1 = Math.floor( 1 + Math.random() * 9 );
+            factor2 = Math.floor( 1 + Math.random() * 9 );
+            productoCorrecto = factor1 * factor2;
+            esPrimerIntento = true;
+
+            document.getElementById( "pregunta" ).innerHTML =
+               "Pregunta " + ( totalPreguntas + 1 ) + " de 10: ¿Cuánto es " + factor1 + " por " + factor2 + "?";
+            document.getElementById( "respuesta" ).value = "";
+            document.getElementById( "respuesta" ).disabled = false;
+            document.getElementById( "btnVerificar" ).disabled = false;
+            document.getElementById( "respuesta" ).focus();
+         }
+
+         function verificarRespuesta()
+         {
+            var respUsuario = parseInt( document.getElementById( "respuesta" ).value );
+
+            if ( respUsuario === productoCorrecto )
+            {
+               if ( esPrimerIntento )
+                  ++correctas;
+
+               ++totalPreguntas;
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: green;'>¡Muy bien!</span>";
+               generarPregunta();
+            }
+            else
+            {
+               esPrimerIntento = false;
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: red;'>No. Intente de nuevo.</span>";
+               document.getElementById( "respuesta" ).value = "";
+               document.getElementById( "respuesta" ).focus();
+            }
+         }
+
+         function evaluarRendimiento()
+         {
+            var porcentaje = ( correctas / 10 ) * 100;
+            var salida = "<h3>Cuestionario finalizado</h3>" +
+               "<p>Respuestas correctas al primer intento: " + correctas + " de 10 (" + porcentaje + "%)</p>";
+
+            if ( porcentaje < 75 )
+               salida += "<p style='color: red; font-weight: bold;'>Pida ayuda adicional a su instructor.</p>";
+            else
+               salida += "<p style='color: green; font-weight: bold;'>¡Felicidades, está listo para pasar al siguiente nivel!</p>";
+
+            salida += "<input type='button' value='Reiniciar para otro estudiante' onclick='reiniciar()'>";
+
+            document.getElementById( "contenedorJuego" ).innerHTML = salida;
+         }
+
+         function reiniciar()
+         {
+            correctas = 0;
+            totalPreguntas = 0;
+            location.reload();
+         }
+
+         function iniciar()
+         {
+            generarPregunta();
+            document.getElementById( "btnVerificar" ).addEventListener( "click", verificarRespuesta, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.24: CAI - Monitoreo de Rendimiento</h1>
+      <hr>
+
+      <div id="contenedorJuego">
+         <h2 id="pregunta"></h2>
+         <form action="#" onsubmit="return false;">
+            <input type="number" id="respuesta">
+            <input type="button" id="btnVerificar" value="Verificar Respuesta">
+         </form>
+         <p id="mensaje"></p>
+      </div>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

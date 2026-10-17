@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.19</title>
+      <style>
+         textarea {
+            width: 100%;
+            height: 250px;
+            font-family: monospace;
+         }
+      </style>
+      <script>
+         // Función para determinar si es primo usando Math.sqrt(n)
+         function esPrimo( n )
+         {
+            if ( n <= 1 ) return false;
+            if ( n === 2 ) return true;
+            if ( n % 2 === 0 ) return false;
+
+            var limite = Math.floor( Math.sqrt( n ) );
+            for ( var i = 3; i <= limite; i += 2 )
+            {
+               if ( n % i === 0 )
+                  return false;
+            }
+            return true;
+         }
+
+         function generarPrimos()
+         {
+            var primos = [];
+            var total = 0;
+
+            for ( var i = 1; i <= 10000; ++i )
+            {
+               if ( esPrimo( i ) )
+               {
+                  primos.push( i );
+                  ++total;
+               }
+            }
+
+            document.getElementById( "resultadoPrimos" ).value = primos.join( ", " );
+            document.getElementById( "conteo" ).innerHTML =
+               "Total de n&uacute;meros primos encontrados entre 1 y 10,000: <strong>" + total + "</strong>";
+         }
+
+         window.addEventListener( "load", generarPrimos, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.19: Números Primos hasta 10,000</h1>
+      <hr>
+
+      <h3>Análisis de rendimiento teórico:</h3>
+      <p>
+         <strong>¿Por qué evaluar hasta la raíz cuadrada de n en lugar de n/2?</strong><br>
+         Si un número $n$ tiene un divisor mayor que $\sqrt{n}$, obligatoriamente debe tener un factor complementario menor que $\sqrt{n}$. Si no se ha encontrado ningún divisor menor o igual a $\sqrt{n}$, el número no tiene divisores enteros y es primo. Para $n = 10{,}000$, en lugar de probar hasta $5{,}000$ divisiones, basta probar hasta $100$, optimizando el tiempo de ejecución en varios órdenes de magnitud.
+      </p>
+
+      <p id="conteo"></p>
+      <textarea id="resultadoPrimos" readonly></textarea>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

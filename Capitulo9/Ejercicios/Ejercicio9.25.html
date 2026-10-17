@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.25</title>
+      <script>
+         var numeroSecreto;
+
+         function iniciarJuego()
+         {
+            numeroSecreto = Math.floor( 1 + Math.random() * 1000 );
+            document.getElementById( "indicador" ).innerHTML = "Adivine un número entre 1 y 1000:";
+            document.getElementById( "mensaje" ).innerHTML = "";
+            document.getElementById( "intento" ).value = "";
+            document.getElementById( "intento" ).disabled = false;
+            document.getElementById( "btnAdivinar" ).disabled = false;
+            document.getElementById( "intento" ).focus();
+         }
+
+         function comprobarIntento()
+         {
+            var campo = document.getElementById( "intento" );
+            var intento = parseInt( campo.value );
+
+            if ( isNaN( intento ) ) return;
+
+            if ( intento === numeroSecreto )
+            {
+               document.getElementById( "mensaje" ).innerHTML =
+                  "<strong style='color: green;'>¡Felicidades! ¡Adivinó el número!</strong><br><br>" +
+                  "<input type='button' value='Jugar otra vez' onclick='iniciarJuego()'>";
+               campo.value = "";
+               campo.disabled = true;
+               document.getElementById( "btnAdivinar" ).disabled = true;
+            }
+            else if ( intento < numeroSecreto )
+            {
+               document.getElementById( "mensaje" ).innerHTML = "Demasiado bajo. Intente de nuevo.";
+               campo.value = "";
+               campo.focus();
+            }
+            else
+            {
+               document.getElementById( "mensaje" ).innerHTML = "Demasiado alto. Intente de nuevo.";
+               campo.value = "";
+               campo.focus();
+            }
+         }
+
+         function iniciar()
+         {
+            iniciarJuego();
+            document.getElementById( "btnAdivinar" ).addEventListener( "click", comprobarIntento, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.25: Juego de Adivinar el Número</h1>
+      <hr>
+
+      <p id="indicador"></p>
+      <form action="#" onsubmit="return false;">
+         <input type="number" id="intento" min="1" max="1000">
+         <input type="button" id="btnAdivinar" value="Enviar intento">
+      </form>
+      <p id="mensaje"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.7</title>
+      <script>
+         function calcularArea()
+         {
+            var campoRadio = document.getElementById( "radio" );
+            var r = parseFloat( campoRadio.value );
+
+            if ( !isNaN( r ) && r >= 0 )
+            {
+               var area = areaCirculo( r );
+               document.getElementById( "resultado" ).innerHTML =
+                  "El &aacute;rea del c&iacute;rculo con radio " + r + " es: <strong>" + area.toFixed( 2 ) + "</strong>";
+            }
+            else
+            {
+               document.getElementById( "resultado" ).innerHTML =
+                  "Por favor, introduzca un valor num&eacute;rico positivo.";
+            }
+         }
+
+         function areaCirculo( radio )
+         {
+            return Math.PI * Math.pow( radio, 2 );
+         }
+
+         function iniciar()
+         {
+            var boton = document.getElementById( "calcular" );
+            boton.addEventListener( "click", calcularArea, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.7: Área de un Círculo</h1>
+      <hr>
+
+      <form action="#">
+         <label for="radio">Radio del c&iacute;rculo:</label>
+         <input type="number" id="radio" step="any">
+         <input type="button" id="calcular" value="Calcular &Aacute;rea">
+      </form>
+
+      <p id="resultado"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

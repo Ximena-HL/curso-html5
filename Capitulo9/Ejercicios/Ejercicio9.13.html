@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.13</title>
+      <script>
+         function calcular()
+         {
+            var b = parseInt( document.getElementById( "base" ).value );
+            var e = parseInt( document.getElementById( "exponente" ).value );
+
+            if ( !isNaN( b ) && !isNaN( e ) && e >= 0 )
+            {
+               var res = potenciaEntera( b, e );
+               document.getElementById( "resultado" ).innerHTML =
+                  b + "<sup>" + e + "</sup> = <strong>" + res + "</strong>";
+            }
+            else
+            {
+               document.getElementById( "resultado" ).innerHTML =
+                  "Por favor, introduzca una base entera y un exponente mayor o igual a 0.";
+            }
+         }
+
+         function potenciaEntera( base, exponente )
+         {
+            var resultado = 1;
+            for ( var i = 1; i <= exponente; ++i )
+               resultado *= base;
+            return resultado;
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnPotencia" ).addEventListener( "click", calcular, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.13: Función potenciaEntera</h1>
+      <hr>
+
+      <form action="#">
+         <label for="base">Base:</label>
+         <input type="number" id="base">
+         <label for="exponente">Exponente:</label>
+         <input type="number" id="exponente" min="0">
+         <input type="button" id="btnPotencia" value="Calcular">
+      </form>
+
+      <p id="resultado"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

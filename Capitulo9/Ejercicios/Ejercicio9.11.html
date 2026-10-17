@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.11</title>
+      <style>
+         code { background-color: #eee; padding: 2px 5px; font-family: monospace; }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.11: Generación de enteros aleatorios en rangos</h1>
+      <hr>
+
+      <ul>
+         <li><strong>a) 1 &le; n &le; 2:</strong> <code>n = Math.floor( 1 + Math.random() * 2 );</code></li>
+         <li><strong>b) 1 &le; n &le; 100:</strong> <code>n = Math.floor( 1 + Math.random() * 100 );</code></li>
+         <li><strong>c) 0 &le; n &le; 9:</strong> <code>n = Math.floor( Math.random() * 10 );</code></li>
+         <li><strong>d) 1000 &le; n &le; 1112:</strong> <code>n = Math.floor( 1000 + Math.random() * 113 );</code></li>
+         <li><strong>e) -1 &le; n &le; 1:</strong> <code>n = Math.floor( -1 + Math.random() * 3 );</code></li>
+         <li><strong>f) -3 &le; n &le; 11:</strong> <code>n = Math.floor( -3 + Math.random() * 15 );</code></li>
+      </ul>
+
+      <h3>Valores de prueba generados al cargar la página:</h3>
+      <script>
+         document.writeln( "<p>a) " + Math.floor( 1 + Math.random() * 2 ) + "</p>" );
+         document.writeln( "<p>b) " + Math.floor( 1 + Math.random() * 100 ) + "</p>" );
+         document.writeln( "<p>c) " + Math.floor( Math.random() * 10 ) + "</p>" );
+         document.writeln( "<p>d) " + Math.floor( 1000 + Math.random() * 113 ) + "</p>" );
+         document.writeln( "<p>e) " + Math.floor( -1 + Math.random() * 3 ) + "</p>" );
+         document.writeln( "<p>f) " + Math.floor( -3 + Math.random() * 15 ) + "</p>" );
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

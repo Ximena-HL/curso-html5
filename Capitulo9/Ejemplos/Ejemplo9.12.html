@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Función factorial recursiva</title>
+      <style>
+         p { margin: 0px; font-family: monospace; }
+      </style>
+      <script>
+         var salida = "";
+
+         function calcularFactoriales()
+         {
+            for ( var i = 0; i <= 10; ++i )
+               salida += "<p>" + i + "! = " + factorial( i ) + "</p>";
+
+            document.getElementById( "resultados" ).innerHTML = salida;
+         }
+
+         // Función recursiva con caso base
+         function factorial( numero )
+         {
+            if ( numero <= 1 )
+               return 1;
+            else
+               return numero * factorial( numero - 1 );
+         }
+
+         window.addEventListener( "load", calcularFactoriales, false );
+      </script>
+   </head>
+   <body>
+      <h1>Factoriales de 0 a 10</h1>
+      <div id="resultados"></div>
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejemplos</button>
+         </a>
+      </p>
+   </body>
+</html>

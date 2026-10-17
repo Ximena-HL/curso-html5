@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.27</title>
+      <script>
+         var num1, num2, respuestaCorrecta, operadorSimbolo;
+
+         function generarProblema()
+         {
+            var nivel = parseInt( document.getElementById( "nivel" ).value );
+            var tipo = parseInt( document.getElementById( "tipo" ).value );
+
+            var max = Math.pow( 10, nivel ) - 1;
+            var min = ( nivel === 1 ) ? 1 : Math.pow( 10, nivel - 1 );
+
+            num1 = Math.floor( min + Math.random() * ( max - min + 1 ) );
+            num2 = Math.floor( min + Math.random() * ( max - min + 1 ) );
+
+            var operacionActual = tipo;
+            if ( tipo === 5 )
+               operacionActual = Math.floor( 1 + Math.random() * 4 );
+
+            switch ( operacionActual )
+            {
+               case 1:
+                  operadorSimbolo = "+";
+                  respuestaCorrecta = num1 + num2;
+                  break;
+               case 2:
+                  if ( num1 < num2 ) { var temp = num1; num1 = num2; num2 = temp; }
+                  operadorSimbolo = "-";
+                  respuestaCorrecta = num1 - num2;
+                  break;
+               case 3:
+                  operadorSimbolo = "×";
+                  respuestaCorrecta = num1 * num2;
+                  break;
+               case 4:
+                  respuestaCorrecta = num1;
+                  var producto = num1 * num2;
+                  num1 = producto;
+                  operadorSimbolo = "÷";
+                  break;
+            }
+
+            document.getElementById( "pregunta" ).innerHTML = "¿Cuánto es " + num1 + " " + operadorSimbolo + " " + num2 + "?";
+            document.getElementById( "respuesta" ).value = "";
+            document.getElementById( "mensaje" ).innerHTML = "";
+            document.getElementById( "respuesta" ).focus();
+         }
+
+         function verificar()
+         {
+            var res = parseInt( document.getElementById( "respuesta" ).value );
+            if ( res === respuestaCorrecta )
+            {
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: green;'>¡Muy bien!</span>";
+               setTimeout( generarProblema, 1000 );
+            }
+            else
+            {
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: red;'>No. Intente de nuevo.</span>";
+               document.getElementById( "respuesta" ).value = "";
+               document.getElementById( "respuesta" ).focus();
+            }
+         }
+
+         function iniciar()
+         {
+            generarProblema();
+            document.getElementById( "btnVerificar" ).addEventListener( "click", verificar, false );
+            document.getElementById( "nivel" ).addEventListener( "change", generarProblema, false );
+            document.getElementById( "tipo" ).addEventListener( "change", generarProblema, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.27: Proyecto CAI Avanzado</h1>
+      <hr>
+
+      <form action="#" onsubmit="return false;">
+         <label for="nivel">Nivel de dificultad:</label>
+         <select id="nivel">
+            <option value="1">Nivel 1 (1 dígito)</option>
+            <option value="2">Nivel 2 (2 dígitos)</option>
+            <option value="3">Nivel 3 (3 dígitos)</option>
+         </select>
+
+         &nbsp;&nbsp;
+
+         <label for="tipo">Tipo de problema:</label>
+         <select id="tipo">
+            <option value="1">1: Suma</option>
+            <option value="2">2: Resta</option>
+            <option value="3">3: Multiplicación</option>
+            <option value="4">4: División</option>
+            <option value="5">5: Mixto al azar</option>
+         </select>
+      </form>
+
+      <h2 id="pregunta"></h2>
+
+      <form action="#" onsubmit="return false;">
+         <input type="number" id="respuesta">
+         <input type="button" id="btnVerificar" value="Verificar">
+      </form>
+
+      <p id="mensaje"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

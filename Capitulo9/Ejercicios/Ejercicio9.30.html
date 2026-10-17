@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.30</title>
+      <style>
+         pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #333;
+            font-family: monospace;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.30: Función Recursiva Misteriosa</h1>
+      <hr>
+
+      <h3>Código analizado:</h3>
+      <pre>function misterio( a, b )
+{
+   if ( b == 1 )
+      return a;
+   else
+      return a + misterio( a, b - 1 );
+}</pre>
+
+      <h3>¿Qué hace esta función?</h3>
+      <p>
+         La función calcula el <strong>producto de dos enteros positivos (a &times; b) mediante sumas sucesivas</strong>.
+      </p>
+      <p>
+         <strong>Explicación:</strong> En cada llamada recursiva suma <code>a</code> y reduce <code>b</code> en 1, repitiéndose hasta que <code>b</code> llega al caso base (<code>b == 1</code>). Al final habrá sumado <code>a</code> exactamente <code>b</code> veces, lo que corresponde a la definición matemática de la multiplicación:
+      </p>
+      <p>
+         <em>misterio(3, 4) = 3 + misterio(3, 3) = 3 + 3 + misterio(3, 2) = 3 + 3 + 3 + misterio(3, 1) = 3 + 3 + 3 + 3 = 12</em>
+      </p>
+
+      <h3>Demostración en vivo en JavaScript:</h3>
+      <script>
+         function misterio( a, b )
+         {
+            if ( b == 1 )
+               return a;
+            else
+               return a + misterio( a, b - 1 );
+         }
+
+         document.writeln( "<p>Prueba misterio(5, 3): <strong>" + misterio( 5, 3 ) + "</strong></p>" );
+         document.writeln( "<p>Prueba misterio(7, 6): <strong>" + misterio( 7, 6 ) + "</strong></p>" );
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

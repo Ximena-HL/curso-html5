@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.16</title>
+      <style>
+         .digitos {
+            font-family: monospace;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            color: #0d47a1;
+         }
+      </style>
+      <script>
+         // a) Calcula la parte entera del cociente
+         function parteEnteraCociente( a, b )
+         {
+            return Math.floor( a / b );
+         }
+
+         // b) Calcula el residuo entero
+         function residuoEntero( a, b )
+         {
+            return a % b;
+         }
+
+         // c) Separa los dígitos entre 1 y 99999 usando las funciones a y b
+         function mostrarDigitos( n )
+         {
+            var divisor = 1;
+            while ( parteEnteraCociente( n, divisor ) >= 10 )
+            {
+               divisor *= 10;
+            }
+
+            var resultado = "";
+            while ( divisor >= 1 )
+            {
+               var digito = parteEnteraCociente( n, divisor );
+               resultado += digito + "  ";
+               n = residuoEntero( n, divisor );
+               divisor = parteEnteraCociente( divisor, 10 );
+            }
+
+            return resultado;
+         }
+
+         // d) Lectura de número mediante prompt
+         function iniciar()
+         {
+            var entrada = window.prompt( "Introduzca un entero entre 1 y 99999:", "4562" );
+            var num = parseInt( entrada );
+
+            if ( !isNaN( num ) && num >= 1 && num <= 99999 )
+            {
+               var formateado = mostrarDigitos( num );
+               document.getElementById( "salida" ).innerHTML =
+                  "<p>Número original: <strong>" + num + "</strong></p>" +
+                  "<p>Dígitos separados: <span class='digitos'>" + formateado + "</span></p>";
+            }
+            else
+            {
+               document.getElementById( "salida" ).innerHTML =
+                  "<p>Valor fuera de rango o inválido.</p>";
+            }
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.16: Separación de Dígitos</h1>
+      <hr>
+
+      <div id="salida"></div>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

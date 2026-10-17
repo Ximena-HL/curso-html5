@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.15</title>
+   </head>
+   <body>
+      <h1>Ejercicio 9.15: Evaluación de números pares con centinela</h1>
+      <hr>
+
+      <script>
+         function esPar( numero )
+         {
+            return ( numero % 2 === 0 );
+         }
+
+         var entrada = window.prompt( "Introduzca un número entero (o presione cancelar o escriba -9999 para terminar):", "0" );
+
+         document.writeln( "<ul>" );
+
+         while ( entrada !== null && entrada !== "-9999" && entrada.trim() !== "" )
+         {
+            var valor = parseInt( entrada );
+
+            if ( !isNaN( valor ) )
+            {
+               if ( esPar( valor ) )
+                  document.writeln( "<li>El n&uacute;mero " + valor + " es <strong>par (true)</strong></li>" );
+               else
+                  document.writeln( "<li>El n&uacute;mero " + valor + " es <strong>impar (false)</strong></li>" );
+            }
+
+            entrada = window.prompt( "Introduzca el siguiente número entero (-9999 para terminar):", "0" );
+         }
+
+         document.writeln( "</ul>" );
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

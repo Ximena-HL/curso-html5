@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.21</title>
+      <script>
+         var conteoCara = 0;
+         var conteoCruz = 0;
+
+         // Devuelve true para cara y false para cruz
+         function arrojar()
+         {
+            return Math.random() < 0.5;
+         }
+
+         function lanzarMoneda()
+         {
+            var esCara = arrojar();
+
+            if ( esCara )
+            {
+               ++conteoCara;
+               document.getElementById( "ultimoTiro" ).innerHTML = "Resultado del lanzamiento: <strong>Cara</strong>";
+            }
+            else
+            {
+               ++conteoCruz;
+               document.getElementById( "ultimoTiro" ).innerHTML = "Resultado del lanzamiento: <strong>Cruz</strong>";
+            }
+
+            document.getElementById( "estadisticas" ).innerHTML =
+               "Caras: <strong>" + conteoCara + "</strong> | Cruz: <strong>" + conteoCruz + "</strong> | Total: <strong>" + (conteoCara + conteoCruz) + "</strong>";
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnLanzar" ).addEventListener( "click", lanzarMoneda, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.21: Lanzamiento de Monedas</h1>
+      <hr>
+
+      <input type="button" id="btnLanzar" value="Lanzar">
+
+      <p id="ultimoTiro">Presione el botón para realizar un lanzamiento.</p>
+      <p id="estadisticas">Caras: 0 | Cruz: 0 | Total: 0</p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

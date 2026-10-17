@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.9</title>
+      <script>
+         function calcular()
+         {
+            var x1 = parseFloat( document.getElementById( "x1" ).value );
+            var y1 = parseFloat( document.getElementById( "y1" ).value );
+            var x2 = parseFloat( document.getElementById( "x2" ).value );
+            var y2 = parseFloat( document.getElementById( "y2" ).value );
+
+            if ( !isNaN( x1 ) && !isNaN( y1 ) && !isNaN( x2 ) && !isNaN( y2 ) )
+            {
+               var dist = distancia( x1, y1, x2, y2 );
+               document.getElementById( "resultado" ).innerHTML =
+                  "La distancia entre los puntos es: <strong>" + dist.toFixed( 4 ) + "</strong>";
+            }
+            else
+            {
+               document.getElementById( "resultado" ).innerHTML =
+                  "Por favor, complete todas las coordenadas con números válidos.";
+            }
+         }
+
+         function distancia( x1, y1, x2, y2 )
+         {
+            return Math.sqrt( Math.pow( x2 - x1, 2 ) + Math.pow( y2 - y1, 2 ) );
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnDistancia" ).addEventListener( "click", calcular, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.9: Distancia entre dos puntos</h1>
+      <hr>
+
+      <form action="#">
+         <p>
+            <strong>Punto 1:</strong>
+            x<sub>1</sub>: <input type="number" id="x1" step="any">
+            y<sub>1</sub>: <input type="number" id="y1" step="any">
+         </p>
+         <p>
+            <strong>Punto 2:</strong>
+            x<sub>2</sub>: <input type="number" id="x2" step="any">
+            y<sub>2</sub>: <input type="number" id="y2" step="any">
+         </p>
+         <input type="button" id="btnDistancia" value="Calcular Distancia">
+      </form>
+
+      <p id="resultado"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

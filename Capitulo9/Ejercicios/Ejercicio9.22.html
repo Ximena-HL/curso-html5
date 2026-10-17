@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.22</title>
+      <script>
+         var factor1, factor2, productoCorrecto;
+
+         function generarPregunta()
+         {
+            factor1 = Math.floor( 1 + Math.random() * 9 );
+            factor2 = Math.floor( 1 + Math.random() * 9 );
+            productoCorrecto = factor1 * factor2;
+
+            document.getElementById( "pregunta" ).innerHTML =
+               "¿Cuánto es " + factor1 + " por " + factor2 + "?";
+            document.getElementById( "respuesta" ).value = "";
+            document.getElementById( "respuesta" ).focus();
+         }
+
+         function verificarRespuesta()
+         {
+            var respUsuario = parseInt( document.getElementById( "respuesta" ).value );
+
+            if ( respUsuario === productoCorrecto )
+            {
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: green;'>¡Muy bien!</span>";
+               generarPregunta();
+            }
+            else
+            {
+               document.getElementById( "mensaje" ).innerHTML = "<span style='color: red;'>No. Intente de nuevo.</span>";
+               document.getElementById( "respuesta" ).value = "";
+               document.getElementById( "respuesta" ).focus();
+            }
+         }
+
+         function iniciar()
+         {
+            generarPregunta();
+            document.getElementById( "btnVerificar" ).addEventListener( "click", verificarRespuesta, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.22: Aprendizaje de Multiplicación</h1>
+      <hr>
+
+      <h2 id="pregunta"></h2>
+
+      <form action="#" onsubmit="return false;">
+         <input type="number" id="respuesta">
+         <input type="button" id="btnVerificar" value="Verificar Respuesta">
+      </form>
+
+      <p id="mensaje"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

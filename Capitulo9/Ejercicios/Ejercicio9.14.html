@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.14</title>
+      <script>
+         function evaluar()
+         {
+            var n1 = parseInt( document.getElementById( "num1" ).value );
+            var n2 = parseInt( document.getElementById( "num2" ).value );
+
+            if ( !isNaN( n1 ) && !isNaN( n2 ) )
+            {
+               if ( n1 === 0 )
+               {
+                  document.getElementById( "resultado" ).innerHTML =
+                     "No se puede evaluar múltiplo de cero como primer valor.";
+                  return;
+               }
+
+               if ( multiplo( n1, n2 ) )
+                  document.getElementById( "resultado" ).innerHTML =
+                     "<strong>" + n2 + " es m&uacute;ltiplo de " + n1 + " (true)</strong>";
+               else
+                  document.getElementById( "resultado" ).innerHTML =
+                     "<strong>" + n2 + " NO es m&uacute;ltiplo de " + n1 + " (false)</strong>";
+            }
+         }
+
+         function multiplo( primerNum, segundoNum )
+         {
+            return ( segundoNum % primerNum === 0 );
+         }
+
+         function iniciar()
+         {
+            document.getElementById( "btnEvaluar" ).addEventListener( "click", evaluar, false );
+         }
+
+         window.addEventListener( "load", iniciar, false );
+      </script>
+   </head>
+   <body>
+      <h1>Ejercicio 9.14: Determinar si el segundo número es múltiplo del primero</h1>
+      <hr>
+
+      <form action="#">
+         <label for="num1">Primer entero:</label>
+         <input type="number" id="num1">
+         <label for="num2">Segundo entero:</label>
+         <input type="number" id="num2">
+         <input type="button" id="btnEvaluar" value="Verificar">
+      </form>
+
+      <p id="resultado"></p>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>

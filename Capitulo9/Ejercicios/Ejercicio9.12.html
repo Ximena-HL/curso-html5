@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.12</title>
+      <style>
+         code { background-color: #eee; padding: 2px 5px; font-family: monospace; }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.12: Selección al azar de conjuntos específicos</h1>
+      <hr>
+
+      <ul>
+         <li>
+            <strong>a) {2, 4, 6, 8, 10}:</strong><br>
+            <code>document.writeln( 2 + 2 * Math.floor( Math.random() * 5 ) );</code>
+         </li>
+         <br>
+         <li>
+            <strong>b) {3, 5, 7, 9, 11}:</strong><br>
+            <code>document.writeln( 3 + 2 * Math.floor( Math.random() * 5 ) );</code>
+         </li>
+         <br>
+         <li>
+            <strong>c) {6, 10, 14, 18, 22}:</strong><br>
+            <code>document.writeln( 6 + 4 * Math.floor( Math.random() * 5 ) );</code>
+         </li>
+      </ul>
+
+      <h3>Ejemplo de ejecución actual:</h3>
+      <script>
+         document.writeln( "<p>Conjunto a: " + ( 2 + 2 * Math.floor( Math.random() * 5 ) ) + "</p>" );
+         document.writeln( "<p>Conjunto b: " + ( 3 + 2 * Math.floor( Math.random() * 5 ) ) + "</p>" );
+         document.writeln( "<p>Conjunto c: " + ( 6 + 4 * Math.floor( Math.random() * 5 ) ) + "</p>" );
+      </script>
+
+      <hr>
+      <p>
+         <a href="index.html">
+            <button type="button">&larr; Regresar a Ejercicios</button>
+         </a>
+      </p>
+   </body>
+</html>
